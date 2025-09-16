@@ -3,7 +3,7 @@ function loadCart(){
     console.log(cart1);
     
     let cartContainer=document.getElementById('carts')
-    let totalPrice=1;
+    let totalPrice=0;
 
      if(cart1.length===0){
         cartContainer.innerHTML='<p>Your cart is empty.</p>'
@@ -40,7 +40,7 @@ function loadCart(){
 function updateQuantity(index,change){
     let cart1=JSON.parse(localStorage.getItem('cart1'))??[]
     if(cart1[index]){
-        cart1[index].quantity+=change;
+        cart1[index].quantity+=change; 
     if(cart1[index].quantity<=0){
     cart1.splice(index,1)
     }
