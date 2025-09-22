@@ -4,6 +4,7 @@ function loadCart(){
     
     let cartContainer=document.getElementById('carts')
     let totalPrice=0;
+    let grandTotal=0;
 
      if(cart1.length===0){
         cartContainer.innerHTML='<p>Your cart is empty.</p>'
@@ -11,8 +12,11 @@ function loadCart(){
         return;
     }
     let str="";
+     
     cart1.forEach((product,index)=>{
+       
         totalPrice+=product.price*product.quantity;
+        
         str+=`
         <div class="cartitem">
         <img src="${product.thumbnail}" alt="">
@@ -27,12 +31,19 @@ function loadCart(){
         
         <button class="removebtn" onclick="removeFromCart(${index})">Remove</button>
         </div>
+        </hr>
+         </div>
+        `
+          })
+          grandTotal+=totalPrice;
+          
+        str+=`<h2>Grand Total:${grandTotal}</h2>`
        
-        </div>
+       
 
         
-        `
-    })
+        
+  
     
     cartContainer.innerHTML=str;
     document.getElementById("total").innerText="Total:₹"+totalPrice;
