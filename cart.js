@@ -5,9 +5,10 @@ function loadCart(){
     let cartContainer=document.getElementById('carts')
     let totalPrice=0;
     let grandTotal=0;
-
+    let summaryList=document.getElementById('summarylist')
      if(cart1.length===0){
         cartContainer.innerHTML='<p>Your cart is empty.</p>'
+        summaryList.innerHTML="<p>No items></p>"
         document.getElementById('total').innerText='';
         return;
     }
@@ -16,7 +17,7 @@ function loadCart(){
     cart1.forEach((product,index)=>{
        
         totalPrice+=product.price*product.quantity;
-        
+         
         str+=`
         <div class="cartitem">
         <img src="${product.thumbnail}" alt="">
@@ -37,16 +38,25 @@ function loadCart(){
           })
           grandTotal+=totalPrice;
           
-        str+=`<h2>Grand Total:${grandTotal}</h2>`
        
+       
+     cartContainer.innerHTML=str;
+   
+
+    let summary=''
+   cart1.forEach(product=>{
+    const qty=product.quantity
+    summary+=`
+        
+    <p>${product.title}(${qty})</p
+       
+         `
        
 
-        
-        
+    })
   
-    
-    cartContainer.innerHTML=str;
-    document.getElementById("total").innerText="Total:₹"+totalPrice;
+    summaryList.innerHTML=summary
+      document.getElementById("total").innerText="Total:₹"+totalPrice;
 }
 function updateQuantity(index,change){
     let cart1=JSON.parse(localStorage.getItem('cart1'))??[]
@@ -57,6 +67,11 @@ function updateQuantity(index,change){
     }
 }
     localStorage.setItem('cart1',JSON.stringify(cart1));
+    loadCart()
+}
+function buyAll(){
+    alert("Thank you for your purchase")
+    localStorage.removeItem('cart1')
     loadCart()
 }
 function removeFromCart(index){

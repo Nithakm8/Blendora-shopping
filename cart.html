@@ -37,14 +37,42 @@
             width:80px;
             height:40px;
         }
+        .buybtn{
+            width:70px;
+            height:30px;
+           border-radius: 8px;
+           margin: 5px;
+           background-color: yellow;
+           font-size: 15px;
+           font-weight: 600;
+        }
+        .cartsummary{
+            display: flex;
+            flex-direction: column;
+         
+            margin-left: 700px;
+            margin-bottom: 100px;
+            width:30%;
+            height: 50vh;
+            padding-left: 10px;
+            padding-top: 10px;
+           
+        }
+       
     </style>
 </head>
 
 <body>
 <div id="carts">
-<h2 id="total"></h2>  
+ 
 </div>
+<div class="cartsummary">
 
+<div id="summarylist"></div>
+<h2 id="total"></h2> 
+<button class="buybtn" onclick="buyAll()">Buy All</button>
+ 
+</div>
 <script src="cart.js"></script>    
 </body>
 </html>

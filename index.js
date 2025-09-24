@@ -13,14 +13,15 @@ async function getAllProducts() {
         <h3>Stock:${product.stock}</h3>
         </a>
        
-        <button onclick="addToCart(${product.id})">Add to cart</button>  
+        <button onclick="addToCart(${product.id},this)">Add to cart</button>  
+        
         </div> 
         `
      })
     document.getElementById('products').innerHTML=str
 }
 
-function addToCart(id){
+function addToCart(id,btn){
 
     console.log("adding to cart",id);
     const products=JSON.parse(localStorage.getItem('products'))??[]
@@ -42,6 +43,7 @@ function addToCart(id){
     
     localStorage.setItem('cart1',JSON.stringify(cart1))
     
-    
+    btn.innerText='Go To Cart'
+    btn.onclick=()=>window.location.href="cart.html"
 }
 getAllProducts()
