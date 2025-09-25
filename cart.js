@@ -8,7 +8,7 @@ function loadCart(){
     let summaryList=document.getElementById('summarylist')
      if(cart1.length===0){
         cartContainer.innerHTML='<p>Your cart is empty.</p>'
-        summaryList.innerHTML="<p>No items></p>"
+        summaryList.innerHTML="<p>No items</p>"
         document.getElementById('total').innerText='';
         return;
     }
@@ -44,13 +44,16 @@ function loadCart(){
    
 
     let summary=''
-   cart1.forEach(product=>{
-    const qty=product.quantity
-    summary+=`
-        
-    <p>${product.title}(${qty})</p
+   cart1.forEach((product,i)=>{
+   document.getElementById('summary').innerHTML+=`
+   
        
-         `
+    <tr>
+    <td><input   type="number" value="${i+1}"></td>
+    <td><input type="text" value="${product.title}"></td>
+    <td><input type="number" value="${product.price*product.quantity}"></td>
+    </tr>
+     `
        
 
     })
@@ -73,6 +76,8 @@ function buyAll(){
     alert("Thank you for your purchase")
     localStorage.removeItem('cart1')
     loadCart()
+    document.getElementById('summarylist').innerHTML='<p>No items</p>'
+    document.getElementById('total').innerHTML='';
 }
 function removeFromCart(index){
     let cart1=JSON.parse(localStorage.getItem("cart1"))??[]
