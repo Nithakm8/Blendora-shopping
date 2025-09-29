@@ -20,12 +20,13 @@ function loadCart(){
          
         str+=`
         <div class="cartitem">
-        <img src="${product.thumbnail}" alt="">
+        <img src="${product.thumbnail}" class='thumbimg' alt="">
         <div>
-        <h3>${product.title}</h3>
-        <p>₹${product.price}</p>
-         <p>Total:₹${product.price*product.quantity}</p>
-        
+        <div class="desc">
+        <h3><B>${product.title}</B></h3>
+        <p><i>₹${product.price}<i></p>
+         <p><i>Total:₹${product.price*product.quantity}</i></p>
+        </div>
         <button class="qtybtn" onclick="updateQuantity(${index},-1)">-</button>
         <input type="text" name="quantity" value="${product.quantity}">
          <button class="qtybtn" onclick="updateQuantity(${index},1)">+</button>
@@ -44,15 +45,20 @@ function loadCart(){
    
 
     let summary=''
-   cart1.forEach((product,i)=>{
-   document.getElementById('summary').innerHTML+=`
+   cart1.forEach((product)=>{
+   summary+=`
    
-       
-    <tr>
-    <td><input   type="number" value="${i+1}"></td>
-    <td><input type="text" value="${product.title}"></td>
-    <td><input type="number" value="${product.price*product.quantity}"></td>
-    </tr>
+    <div class='summaryitem'>
+   <table>
+    <tr><td>
+  <p class='price11'><i>${product.title}</i></p>
+  
+    </td>
+    <td>
+   <p class="price"> <i>₹${product.price*product.quantity}</i><p>
+  </td>
+  </tr>
+    </div>
      `
        
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLENDORA</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpFmMGdPopahuJj9oc7mvMhe_efnraHiffqA&s">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background-color: white;
+        }
+        
+        #products{
+            width:90%;
+            margin: auto;
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product{
+            max-width: 400px;
+            height:300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: justify;
+            text-decoration: none;
+            color: black;
+        }
+        .product img{
+            height:250px;
+            width:150px;
+            object-fit: contain;
+        }
+        .product h1{
+            font-size: 13px;
+           
+            
+        }
+        .product h2{
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: justify;
+            font-weight: 200;
+        }
+        .product h3{
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+             font-weight: 200;
+        }
+        header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+        background-color:rgb(100, 21, 21);
+        width:100%;
+        height:10vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+        }
+        .logo{
+            font-weight: 900;
+        }
+        .logo a{
+            text-decoration: none;
+            color:chocolate;
+            font-size: 30px;
+        }
+        .links ul{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            list-style: none;
+            gap:20px;
+            font-weight: 900;
+            
+        }
+        .links a{
+            text-decoration: none;
+            color:white;
+        }
+        .logincart{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:30px;
+        }
+        .logincart a{
+            text-decoration: none;
+            color:white;
+            font-weight: 900;
+        }
+        .cartbtn{
+            margin-top: 10px;
+            width:80px;
+            height:30px;
+            
+        }
+        .img1 img{
+            width:100%;
+            height:100%;
+            box-shadow: 2px 2px 2px 5px white;
+        }
+        .img1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:rgb(172, 112, 112);
+            border-radius: 50px 50px 50px 50px;
+        }
+        .img1 p{
+            margin: auto;
+            text-shadow: 2px 2px 5px rgb(99, 5, 5);
+            
+           
+        }
+        .cart button{
+            position: relative;
+            left:45px;
+            width:80px;
+            height:30px;
+            background-color: rgb(75, 11, 11);
+            color:white;
+            border-radius: 10px;
+            border: none;
+        } 
+        
+    </style>
+</head>
+<body>
+<header>
+<div class="logo">
+   <a href="index.html">BLENDORA</a>
+</div>
+<div class="links">
+<ul>
+    <li><a href="index.html" class="link1">HOME</a></li>
+   <!-- <li><a  class="link1" href="">ABOUT US</a></li> -->
+   <li><a class="link1" href="contact.html">CONTACT US</a></li>
+</ul>
+</div>
+<div class="logincart">
+<p class="login"><a href="">LOGIN</a></p>
+<p class="cart"><a href="cart.html">CART</a></p>
+</div>
+</header>
+<div class="img1">
+    
+    <!-- <img src="https://thumbs.dreamstime.com/b/happy-woman-shopping-online-colorful-icons-background-41251109.jpg" alt=""> -->
+    
+</div>
+<div class="enjoy">
+    <p style="color: rgb(192, 40, 40);font-size: 20px;font-weight: 900;"><marquee behavior="" direction="left"><i>Enjoy Shopping with BLENDORA..</marquee></i></p>
+</div>
+
+
+
+
+
+<div id="products">
+    <a href="product.html"></a>
+  </div>
+  <div id="cart1">
+    
+  </div>
+
+
+<script src="index.js"></script>  
+</body>
+</html>

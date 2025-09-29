@@ -11,7 +11,7 @@
         }
         body{
             margin-left: 20px;
-            background-color: rgba(48, 133, 133, 1);
+            background-color: white;
             font-family:'TimesNewRoman';
         }
         input{
@@ -23,15 +23,25 @@
             
             width:20px;
             height: 20px;
-            background-color: skyblue;
+            background-color: rgb(182, 186, 189);
             
             border: none;
-            
+           
+           
         }
+         
         .cartitem{
             font-family:'TimesNewRoman';
-            font-size:18 
-            px;
+            font-size:15px;
+            display:flex;
+            justify-content: left;
+            align-items: left;
+            margin-left: 30px;
+            
+        }
+        .desc{
+            margin-top: 40px;
+            /* margin-left: 30px; */
         }
         .removebtn{
             width:60px;
@@ -39,7 +49,7 @@
             border-radius: 9px;
             border: none;
             font-family:'TimesNewRoman';
-            background-color: skyblue;
+            background-color: rgb(197, 197, 207);
             font-size:14px;
         }
         .grandtot{
@@ -48,22 +58,24 @@
             margin-left:10px;
         }
          .buybtn{
-            width:70px;
-            height:50px;
+            width:65px;
+            height:40px;
            border-radius: 7px;
            margin: 5px;
            background-color: yellow;
            font-size: 15px;
            font-weight: 600;
            margin-bottom:20px;
-          
+          margin-left: 10px;
+          margin-top: 10px;
         }
         .cartsummary{
                 
             display: flex;
             flex-direction: column;
+            margin-top: 20px;
            position:relative;
-           bottom:300px;
+           bottom:240px;
             position:sticky;
             position:fixed;
             margin-left: 700px;
@@ -76,7 +88,11 @@
            overflow-y:auto;
            
         }
-        .cartsummary input{
+        #total{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        /* .cartsummary input{
             width:110px;
             height:20px;
             text-align:center; 
@@ -84,7 +100,7 @@
             border-radius:7px;
             border:none;
             font-family:'TimesNewRoman';
-        }
+        } */
         .carts{
             flex:2;
            max-height:100vh; 
@@ -97,6 +113,7 @@
             gap:10px;
             flex-wrap: wrap;
             padding: 10px;
+           
         }
         thead tr{
              text-align:center;
@@ -104,9 +121,33 @@
              justify-content:space-evenly;
              align-items:center;
         }
-       
+        .thumbimg{ 
+            width:100px;
+            height:25vh;
+        }
+        tr{
+            display: flex;
+            gap:30px;
+           
+           justify-content: space-between;
+        }
+      .summaryitem{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
         
-       
+      } 
+      .summaryitem .price{
+            color:rgb(204, 48, 48);
+      }
+      .price11{
+        display: flex;
+        justify-content:end;
+        align-items: left;
+        gap:10px;
+      }
+      
     </style>
 </head>
 
@@ -115,19 +156,19 @@
  
 </div>
 <div class="cartsummary" >
-<table >
+    <h2 style="color: rgb(151, 9, 33);font-size: 18px;margin-bottom: 10px;margin-left: 10px;">Cart Summary</h2>
+<!-- <table>
 <thead>
-<tr>
-<th>Sl.no</th>
-<th>Title</th>
-<th>Price</th>
+<tr class="heading">Summary
+
+
 </tr>
 </thead>
 <tbody id="summary">
 </tbody>
-</table>
+</table> -->
 
-<div id="summarylist"></div>
+<div id="summarylist" class="summarylist"></div>
 <h2 id="total"></h2> 
 <button class="buybtn" onclick="buyAll()">Buy All</button>
  
